@@ -1,0 +1,35 @@
+doctype html 
+html(lang="en")
+    head 
+        title Document
+    body
+        h3 Employees
+        p.home#child this is pug
+        div#house more pug<!-- but for div with a class, we use a dot, for id we use #-->
+        .animal dog<!-- pug recognizes this as a div class-->
+            #animal cat<!--pug recognizes this as div id-->
+        ul
+            li 
+                a(href="/") home 
+            li 
+                a(href="/") about
+            li 
+                a(href="/") contact
+
+                //multiple line paragraphs
+        p //this line breaks
+            |log in as
+            |student
+
+           
+        -
+            employees=[
+                "Aminah", "Nassali", "Kalungi", "Rasul", "Florence", "Kizza"
+            ]
+                ul 
+                    each employee in employees 
+                        li #{employee}
+
+        //line 25-31 is termed as code buffering
+
+
