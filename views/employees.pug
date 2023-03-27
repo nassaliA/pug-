@@ -16,19 +16,17 @@ html(lang="en")
             li 
                 a(href="/") contact
 
-                //multiple line paragraphs
-        p //this line breaks
+                //multiple line paragraphs this line breaks
+        p 
             |log in as
             |student
-
-           
         -
             employees=[
                 "Aminah", "Nassali", "Kalungi", "Rasul", "Florence", "Kizza"
             ]
-                ul 
-                    each employee in employees 
-                        li #{employee}
+        ul 
+            each employee in employees 
+              li #{employee}
 
         //line 25-31 is termed as code buffering
 
