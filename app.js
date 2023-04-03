@@ -15,6 +15,8 @@ const aboutRoute =require("./routes/aboutRoute")
 const contactsRoute =require("./routes/contactsRoute")
 const ufarmIndexRoute = require("./routes/ufarmIndexRoute")
 const registerRoute = require("./routes/registerRoute")
+//const studentRoutes = require("./routes/registerRoute/student")
+const signupRoutes = require("./routes/signupRoutes")
 
 // creating a connection between the controller and the database
 mongoose.connect(config.database,{
@@ -43,7 +45,8 @@ app.use("/", aboutRoute)
 app.use("/",contactsRoute)
 app.use("/",ufarmIndexRoute)
 app.use("/",registerRoute)
-
+//app.use("/",studentRoutes)
+app.use("/",signupRoutes)
 // support parsing of application/json type post data
 app.use(bodyParser.json());
 

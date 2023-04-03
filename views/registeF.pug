@@ -1,0 +1,56 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(http-equiv='X-UA-Compatible' content='IE=edge')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  title Urban Farmer Registration
+  link(rel='stylesheet' href='styles.css/ufarm.css')
+button.btn.btn-outline-success(type='button')
+  a(href='index.html') Back Home
+h1 Registration Form
+p Please fill out this form with the required information
+form(method='post' action='#')
+  fieldset
+    label(for='first-name')
+      | Enter Your First Name:
+      input#first-name(name='first-name' type='text' required='')
+    small
+    label(for='last-name')
+      | Enter Your Last Name: 
+      input#last-name(name='last-name' type='text' required='')
+    label(for='email')
+      | Enter Your Email: 
+      input#email(name='email' type='email' required='')
+    label(for='new-password')
+      | Create a New Password: 
+      input#new-password(name='new-password' type='password' pattern='[a-z0-5]{8,}' required='')
+  fieldset
+    label(for='female')
+      input#female.inline(type='radio' name='gender' checked='')
+      |  Female
+    label(for='male')
+      input#male.inline(type='radio' name='gender')
+      |  Male
+    label(for='terms-and-conditions')
+      input#terms-and-conditions.inline(type='checkbox' required='' name='terms-and-conditions')
+      |  I accept the 
+      a(href='https://www.freecodecamp.org/news/terms-of-service/') terms and conditions
+  fieldset
+    label(for='profile-picture')
+      | Upload a profile picture: 
+      input#profile-picture(type='file' name='file')
+    label(for='age')
+      | Input your age (years): 
+      input#age(type='number' name='age' min='13' max='120')
+    label(for='referrer')
+      | ward name?
+      select#ward(name='ward')
+        option(value='') (select one)
+        option(value='1') massaja 
+        option(value='2') Sseguku
+        option(value='3') Makindye Sabagabo
+        option(value='4') Namasuba
+    label(for='bio')
+      | Provide a bio:
+      textarea#bio(name='bio' rows='3' cols='30' placeholder='tell us more about yourself...')
+  input(type='submit' value='Submit')

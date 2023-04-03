@@ -13,47 +13,33 @@ head
   title Document
 
 .container
-
   fieldset 
-
     table.table
-
         thead.thead-dark
-
             tr
-
                 th(scope='col') Fullname
-
                 th(scope='col') Phone
-
                 th(scope='col') Address
-
                 th(scope='col') Language
-
                 th(scope='col') City
-
                 th(scope='col') Age
-
+                th(scope='col') Fees
         tbody
-
-
-
-        tr          td Some dued
-
-                    td 0987654
-
-                    td Home
-
-                    td C++
-
-                    td Gulu
-
-                    td 56
-
-           
-
-            
-
+        if students.length
+            each student in students  
+                tr          
+                    td #{student.fullname}
+                    td #{student.phone}
+                    td #{student.address}
+                    td #{student.language}
+                    td #{student.city}
+                    td #{student.age}
+                    td #{student.fees}
+                      //we send information to the backend through forms
+                      form(method="post"action="student/delete") 
+                    
+        else
+            p there are no students in the database
 
 script(src='https://code.jquery.com/jquery-3.2.1.slim.min.js' integrity='sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN' crossorigin='anonymous')
 
