@@ -1,7 +1,9 @@
 const express = require('express');
 const router = express.Router();
 //imported model
-const Register = require("../models/registermodel")
+const Register = require("../models/registermodel");
+const  mongoose  = require('mongoose');
+const  connectEnsureLogin = require('connect-ensure-login');
 
 router.get("/register",(req,res)=>{
     res.render("register")

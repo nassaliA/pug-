@@ -3,6 +3,7 @@ const app = express();
 const path = require('path');
 const router = express.Router();
 const mongoose= require("mongoose")
+const passport =require("passport")
 
 // we are creating an eviroment file
 // require("dotenv").config();
@@ -27,15 +28,22 @@ const studentRoutes = require("./routes/studentRoutes")
 const student_editRoutes = require("./routes/student_editRoutes")
 const signupRoutes = require("./routes/signupRoutes")
 const authRoutes = require("./routes/authRoutes")
+const ufRoutes = require("./routes/ufRoutes")
+const aoRoutes = require("./routes/aoRoutes")
+const foRoutes = require("./routes/foRoutes")
 
-app.use()
+app.use(session({
+  secret: "secret",
+  resave: false,
+  saveUninitialized:false
+}))
 
 // * Passport middleware
 app.use(passport.initialize());
 app.use(passport.session());
 passport.use(User.createStrategy());
 passport.serializeUser(User.serializeUser());
-passport.deserializeUser(User.deserializeUser());
+passport.deserializeUser(User.deserializeUser())
 
 
 // creating a connection between the controller and the database
@@ -72,6 +80,9 @@ app.use("/",studentRoutes)
 app.use("/",student_editRoutes)
 app.use("/",signupRoutes)
 app.use("/",authRoutes)
+app.use("/",ufRoutes)
+app.use("/",aoRoutes)
+app.use("/",foRoutes)
 
 app.get("*",(req,res)=>{
   res.status("404").send("page doesnot exist")
