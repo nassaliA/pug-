@@ -3,20 +3,40 @@ const app = express();
 const path = require('path');
 const router = express.Router();
 const mongoose= require("mongoose")
+
 // we are creating an eviroment file
 // require("dotenv").config();
+
+
+//importing express session
+const session =require("express-session")
+
 
 // importing database file directly
 const config = require("./config/database")
 const bodyParser =require('body-parser')
 
+
+const User =require("./models/userModel")
 const employeesRoutes =require("./routes/employeesRoutes")
 const aboutRoute =require("./routes/aboutRoute")
 const contactsRoute =require("./routes/contactsRoute")
 const ufarmIndexRoute = require("./routes/ufarmIndexRoute")
 const registerRoute = require("./routes/registerRoute")
-//const studentRoutes = require("./routes/registerRoute/student")
+const studentRoutes = require("./routes/studentRoutes")
+const student_editRoutes = require("./routes/student_editRoutes")
 const signupRoutes = require("./routes/signupRoutes")
+const authRoutes = require("./routes/authRoutes")
+
+app.use()
+
+// * Passport middleware
+app.use(passport.initialize());
+app.use(passport.session());
+passport.use(User.createStrategy());
+passport.serializeUser(User.serializeUser());
+passport.deserializeUser(User.deserializeUser());
+
 
 // creating a connection between the controller and the database
 mongoose.connect(config.database,{
@@ -34,6 +54,9 @@ mongoose.connect(config.database,{
   })
 
 
+
+  
+
 app.set("view engine","pug")
 app.set("views", path.join(__dirname,"views"))
 app.use(express.static(path.join(__dirname, "public")));
@@ -45,8 +68,16 @@ app.use("/", aboutRoute)
 app.use("/",contactsRoute)
 app.use("/",ufarmIndexRoute)
 app.use("/",registerRoute)
-//app.use("/",studentRoutes)
+app.use("/",studentRoutes)
+app.use("/",student_editRoutes)
 app.use("/",signupRoutes)
+app.use("/",authRoutes)
+
+app.get("*",(req,res)=>{
+  res.status("404").send("page doesnot exist")
+
+
+})
 // support parsing of application/json type post data
 app.use(bodyParser.json());
 

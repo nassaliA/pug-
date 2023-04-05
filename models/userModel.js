@@ -13,7 +13,7 @@ const userSchema = new mongoose.Schema({
         trim:true,
     },
 
-  uniqueid:{
+  username:{
         type:String,
         trim:true,
         required:true,
@@ -67,5 +67,5 @@ const userSchema = new mongoose.Schema({
 
 
 })
-userSchema.plugin(passportLocalMongoose, {usernameField:"uniqueid"});
-module.exports = mongoose.Model("User",userSchema)
+userSchema.plugin(passportLocalMongoose);
+module.exports = mongoose.Model("Usermodel",userSchema)
