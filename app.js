@@ -131,11 +131,4 @@ app.listen(3000, ()=> console.log('listening on port 3000'))
 //     res.send('about page . Nice');
 //});
 
-
-             
-
-
-
-
-
 //app.listen(3000, ()=> console.log('listening on port 3000'))
