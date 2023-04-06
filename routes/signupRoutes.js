@@ -13,6 +13,7 @@ router.post("/signup" ,async(req,res)=>{
   console.log(req.body)
   try{
     const user = new User(req.body);
+    console.log(req.body)
     let userName = await User.findOne({username: req.body.username})
     if(userName){
       return res.send("this unique id already exists") 
@@ -22,7 +23,7 @@ router.post("/signup" ,async(req,res)=>{
         if(error){
           throw error
         }
-        res.redirect("/students")
+        res.redirect("/login")
       })
     }
 
