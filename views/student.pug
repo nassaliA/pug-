@@ -36,7 +36,11 @@ head
                     td #{student.age}
                     td #{student.fees}
                       //we send information to the backend through forms
-                   form(method="post"action="student/delete") 
+                      form(method="post" action="student/delete") 
+                        input(type="hidden" name="id" value=student.id)
+                        button.btn.btn-danger(type="submit") Delete
+                    td 
+                      a.btn.btn-dark.btn-block(href="edit_student/"+student.id) Edit
                     
         else
             p there are no students in the database
