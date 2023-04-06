@@ -2,11 +2,11 @@ doctype html
 head
   meta(charset='UTF-8')
   meta(http-equiv='X-UA-Compatible' content='IE=edge')
-  link(rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css&#39'; integrity='sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm' crossorigin='anonymous')
+  link(rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css' integrity='sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm' crossorigin='anonymous')
   meta(name='viewport' content='width=device-width, initial-scale=1.0')
   title Document
 .container
-  form.contact_form.well.form-horizontal(name='editStudent' action='/edit_student?id='+student._id method='post')
+  form#contact_form.well.form-horizontal(name='editStudent' action='/edit_student?id='+student._id method='post')
     fieldset
       // Form Name
       legend
@@ -21,7 +21,7 @@ head
           .input-group
             span.input-group-addon
               i.glyphicon.glyphicon-user
-            input.form-control(name='fullname' type='text' )
+            input.form-control(name='fullname' type='text' value= student.fullname )
       // Text input
       .form-group
         label.col-md-4.control-label Phone number
@@ -29,7 +29,7 @@ head
           .input-group
             span.input-group-addon
               i.glyphicon.glyphicon-user
-            input.form-control(name='phone' type='text' )
+            input.form-control(name='phone' type='text' value= student.phone)
      
       // Text input
       .form-group
@@ -38,7 +38,7 @@ head
           .input-group
             span.input-group-addon
               i.glyphicon.glyphicon-user
-            input.form-control(name='address'  type='text' )
+            input.form-control(name='address' type='text' value= student.address)
       // Text input
       .form-group
         label.col-md-4.control-label Language
@@ -46,7 +46,7 @@ head
           .input-group
             span.input-group-addon
               i.glyphicon.glyphicon-user
-            input.form-control(name='language' type='text') 
+            input.form-control(name='language' type='text' value= student.language)
       // Text input
       .form-group
         label.col-md-4.control-label City
@@ -54,7 +54,7 @@ head
           .input-group
             span.input-group-addon
               i.glyphicon.glyphicon-user
-            input.form-control(name='city' type='text' )
+            input.form-control(name='city' type='text' value= student.city)
       // Num input
       .form-group
         label.col-md-4.control-label Age
@@ -62,7 +62,7 @@ head
           .input-group
             span.input-group-addon
               i.glyphicon.glyphicon-envelope
-            input.form-control(name='age'  type='number' )
+            input.form-control(name='age'  type='number' value= student.age disabled)
       // Text input
       //.form-group
         label.col-md-4.control-label Contact No.
@@ -83,5 +83,5 @@ head
            
 
 script(src='https://code.jquery.com/jquery-3.2.1.slim.min.js' integrity='sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN' crossorigin='anonymous')
-script(src='https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js;' integrity='sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q' crossorigin='anonymous')
-script(src='https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js;' integrity='sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl' crossorigin='anonymous')
+script(src='https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js' integrity='sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q' crossorigin='anonymous')
+script(src='https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js' integrity='sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl' crossorigin='anonymous')

@@ -24,8 +24,6 @@ const aboutRoute =require("./routes/aboutRoute")
 const contactsRoute =require("./routes/contactsRoute")
 const ufarmIndexRoute = require("./routes/ufarmIndexRoute")
 const registerRoute = require("./routes/registerRoute")
-const studentRoutes = require("./routes/studentRoutes")
-const student_editRoutes = require("./routes/student_editRoutes")
 const signupRoutes = require("./routes/signupRoutes")
 const authRoutes = require("./routes/authRoutes")
 const ufRoutes = require("./routes/ufRoutes")
@@ -76,19 +74,17 @@ app.use("/", aboutRoute)
 app.use("/",contactsRoute)
 app.use("/",ufarmIndexRoute)
 app.use("/",registerRoute)
-app.use("/",studentRoutes)
-app.use("/",student_editRoutes)
 app.use("/",signupRoutes)
 app.use("/",authRoutes)
 app.use("/",ufRoutes)
 app.use("/",aoRoutes)
 app.use("/",foRoutes)
 
-app.get("*",(req,res)=>{
-  res.status("404").send("page doesnot exist")
+// app.get("*",(req,res)=>{
+//   res.status("404").send("page doesnot exist")
 
 
-})
+//})
 // support parsing of application/json type post data
 app.use(bodyParser.json());
 
