@@ -80,11 +80,11 @@ app.use("/",ufRoutes)
 app.use("/",aoRoutes)
 app.use("/",foRoutes)
 
-// app.get("*",(req,res)=>{
-//   res.status("404").send("page doesnot exist")
+ app.get("*",(req,res)=>{
+  res.status("404").send("page doesnot exist")
 
 
-//})
+})
 // support parsing of application/json type post data
 app.use(bodyParser.json());
 
