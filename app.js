@@ -81,7 +81,7 @@ app.use("/",registerRoute)
 app.use("/",signupRoutes)
 app.use("/",authRoutes)
 app.use("/",ufRoutes)
-//app.use("/",aoRoutes)
+app.use("/",aoRoutes)
 app.use("/",foRoutes)
 
 app.get("*", (req,res)=>{
